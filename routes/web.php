@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('index');
 });
+
+Route::get('index','PostController@index')->name('index');
+Route::get('post/form','PostController@addpost')->name('add');
+Route::post('store','PostController@store')->name('store');

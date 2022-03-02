@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('index','PostController@index')->name('index');
 Route::get('post/form','PostController@addpost')->name('add');
 Route::post('store','PostController@store')->name('store');
+Route::get('show/details/{id}','PostController@show')->name('show');
+Route::get('edit/details/{id}','PostController@edit')->name('edit');
+Route::post('post/update/{id}','PostController@update')->name('update');
+Route::get('delete/details/{id}','PostController@delete')->name('delete');

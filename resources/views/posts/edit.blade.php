@@ -21,15 +21,15 @@
     </div>
 @endif
     <div class="card card-border p-2">
-        <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('update',$editpost->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <input type="text" class="form-control" id="title" name="title" value="{{$editpost->title}}">
             </div>
             <div class="form-group">
                 <label for="details">Details</label>
-                <textarea type="text" class="form-control" rows="6" cols="50" id="details" name="details"></textarea>
+                <textarea type="text" class="form-control" rows="6" cols="50" id="details" name="details" >{{$editpost->details}}</textarea>
             </div>
             <div class="div ">
             <label class="form-check-label mb-1" for="defaultCheck1">Tags</label>
@@ -53,7 +53,7 @@
             <div class="form-group mb-3">
                 <input type="file" class="file-control" id="details" name="image">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
 </div>
     </div>

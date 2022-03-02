@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Post;
 
@@ -9,7 +9,9 @@ class PostController extends Controller
 {
     public function index()
     {
-       return view('posts.index');
+       $i=1;
+       $post = Post::latest()->paginate(3);
+       return view('posts.index',compact('post','i'))->with('i',(request()->input('page',1)-1)*3);
     }
 
     public function addpost()

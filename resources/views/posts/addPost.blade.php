@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label for="details">Details</label>
-                <input type="text" class="form-control" id="details" name="details">
+                <textarea type="text" class="form-control" id="details" name="details"></textarea>
             </div>
             <div class="div ">
             <label class="form-check-label mb-1" for="defaultCheck1">Tags</label>
